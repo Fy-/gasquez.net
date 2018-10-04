@@ -1,0 +1,21 @@
+{{ define "content" }}
+<section>
+	<h1>### {{.PageTitle}}</h1>
+	<form class="form" method="post">
+	  <fieldset class="form-group">
+	    <label for="username">USERNAME:</label>
+	    <input id="username" type="text" placeholder="type your name..." class="form-control">
+	  </fieldset>
+	  <fieldset class="form-group">
+	    <label for="email">EMAIL:</label>
+	    <input id="email" type="email" placeholder="" class="form-control">
+	  </fieldset>
+	  <fieldset class="form-group form-textarea">
+	    <label for="message">MESSAGE:</label>
+	    <textarea id="message" rows="5" class="form-control"></textarea>
+	  </fieldset>
+	  <div class="form-actions">
+	    <button type="submit" class="btn btn-default btn-ghost btn-block">Submit</button>
+	  </div>
+	</form></section>
+{{ end }}

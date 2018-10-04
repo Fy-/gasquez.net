@@ -1,0 +1,24 @@
+.fy {
+}
+.cell {
+	padding: 1em;
+}
+.logo {
+	margin: 1em 0;
+	display: block;
+}
+.nolink:hover {
+	background: none;
+	border: none;
+}
+.nolink {
+	background: none;
+	border: none;
+}
+footer small {
+	display: block;
+	margin-top: 4em;
+}
+main p {
+	text-align: justify;
+}
