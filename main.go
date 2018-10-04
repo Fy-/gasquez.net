@@ -1,22 +1,26 @@
+/*
+	gasquez.net - website
+	~~~~~~~~~~~~~~~~~~~~~
+	:license: BSD, see LICENSE for more details.
+*/
+
 package main
 
 import (
 	"net/http"
 	"time"
 
-	"github.com/gorilla/mux" // Routes
+	"github.com/gorilla/mux"
 )
 
 const siteTitle = "Fy.to"
-
-
-
-
+const debug = false
 
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", Page)
 	r.HandleFunc("/contact", Contact )
+	r.HandleFunc("/projects", Projects )
 
 	r.HandleFunc("/{page}", Page )
 	r.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets/"))))
@@ -24,7 +28,7 @@ func main() {
 
 	srv := &http.Server{
         Handler:      r,
-        Addr:         "127.0.0.1:8000",
+        Addr:         "0.0.0.0:8000",
         WriteTimeout: 15 * time.Second,
         ReadTimeout:  15 * time.Second,
     }

@@ -1,0 +1,21 @@
+{{ template "header" .Header}}
+<section>
+	<h1>{{.Header.Title}}</h1>
+ 
+	<div class="grid">
+		{{ range $key, $value := .Content }}
+			<section class="cell-12of12">
+				<div class="card">
+					<header class="card-header">{{$value.Title}}</header>
+			   		<div class="card-content">
+						<div class="inner">
+							{{$value.Body}}
+						</div>
+					</div>
+				</div>
+			</section>
+			<br />
+		{{ end }}
+	</div>
+</section>
+{{ template "footer" .Footer}}

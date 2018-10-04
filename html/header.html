@@ -1,0 +1,35 @@
+{{ define "header"}}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hack/0.8.1/hack.css" />
+		<link rel="stylesheet" href="/assets/after-dark.css">
+		<link rel="stylesheet" href="/assets/site.css" />
+		<title>{{.Title}} • {{.SiteTitle}}</title>
+		<meta name="author" content="Florian Gasquez - m@fy.to">
+
+	</head>
+	<body class="hack dark main">
+		<div class="container fy">
+			<div class="grid">
+				<aside class="cell -3of12">
+			        <div>
+			        	<a title="{{.SiteTitle}}" class="nolink logo" href="/"><img src="/assets/fy100.png" alt="{{.SiteTitle}}"></a>
+			        </div>
+			        <nav class="menu" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+						<a class="menu-item"  itemprop="url" href="/">{{.SiteTitle}} {{if eq .PageID "home" }}<span class="pull-right">»</span>{{end}}</a> 
+						<a class="menu-item"  itemprop="url"  href="/projects">Projects {{if eq .PageID "projects" }}<span class="pull-right">»</span>{{end}}</a> 
+						<a class="menu-item"  itemprop="url"  href="/clients">Clients {{if eq .PageID "clients" }}<span class="pull-right">»</span>{{end}}</a> 
+
+						<a class="menu-item"  itemprop="url" href="/blog/">Blog {{if eq .PageID "blog" }}<span class="pull-right">»</span>{{end}}</a>
+						<a class="menu-item"  itemprop="url" href="/contact">Contact {{if eq .PageID "contact" }}<span class="pull-right">»</span>{{end}}</a>
+						<a class="menu-item"  itemprop="url" href="/resume">Resume {{if eq .PageID "resume" }}<span class="pull-right">»</span>{{end}}</a>
+
+			        </nav>
+			        <br />
+      			</aside>
+				<main class="cell -9of12" role="main">
+{{ end }}
